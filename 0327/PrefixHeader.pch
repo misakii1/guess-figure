@@ -1,0 +1,39 @@
+//
+//  PrefixHeader.pch
+//  0327
+//
+//  Created by tim on 2017/9/8.
+//  Copyright © 2017年 tim. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// 屏幕高度
+#define TMGHeight [UIScreen mainScreen].bounds.size.height
+// 屏幕宽度
+#define TMGWidth [UIScreen mainScreen].bounds.size.width
+// 以iPhone5为基准(UI妹纸给你的设计图是iPhone5的),当然你也可以改,但是出图是按照7P(6P)的图片出的,因为大图压缩还是清晰的,小图拉伸就不清晰了,所以只出一套最大的图片即可
+#define TMGiPhone5W 320.0
+#define TMGiPhone5H 568.0
+#define TMGiPhone6W 375.0
+#define TMGiPhone6H 667.0
+#define TMGiPhone6pW 414.0
+#define TMGiPhone6pH 736.0
+// 计算比例
+// x比例 1.293750 在iPhone7的屏幕上
+#define TMGScaleX TMGWidth / TMGiPhone6W
+// y比例 1.295775
+#define TMGScaleY TMGHeight / TMGiPhone6H
+// w比例 1.293750 在iPhone7的屏幕上
+#define TMGScaleW(w) w*TMGScaleX
+// h比例 1.295775
+#define TMGScaleH(h) h*TMGScaleY
+// X坐标
+#define LineX(l) l*TMGScaleX
+// Y坐标
+#define LineY(l) l*TMGScaleY
+// 字体
+#define Font(x) [UIFont systemFontOfSize:x*TMGScaleX]
+
+#endif /* PrefixHeader_pch */
